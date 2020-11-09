@@ -31,9 +31,9 @@
 </main>
 <main class="container">
   <h1 class="display-4"><b>Помощь проекту</b></h1>
-  <p>Если есть желающие помочь с развитием сайта, пожалуйста пишите на почту:<b> admin@hyenada.pp.ua </b><br>Также обязательно нужно уметь работать с html, CSS, JavaScript.</p>
+  <p>Если есть желающие помочь с развитием сайта, пожалуйста пишите на почту:<b> info.harhive@gmail.com </b><br>Также обязательно нужно уметь работать с html, CSS, JavaScript.</p>
   <p>Отдельное спасибо Роме </p>
-  <p><br>Version 0.8</p>
+  <p><br>Version 0.8.1 <br><a href="https://github.com/bot08/Harhive">Github</a></p>
 </main>
 <main><center><a href="https://admin.harhive.pp.ua/copy" type="button" class="btn btn-light  shadow p-3 mb-5 button">Copyright</a><a href="https://admin.harhive.pp.ua/legal-note" type="button" class="btn btn-light  shadow p-3 mb-5 button">Legal note</a><a href="https://admin.harhive.pp.ua/dmca" type="button" class="btn btn-light  shadow p-3 mb-5 button">DMCA</a></center></main>
 

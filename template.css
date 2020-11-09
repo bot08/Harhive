@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  padding-top: 55px; /* падинг (отступ сверху) */
+  padding-top: 55px; 
   margin:0;
 }
 
@@ -15,16 +15,16 @@ body {
   color: #999;
   text-align: left;
   background-color: #ffffff;
-  border-top: .07rem solid #e5e5e5; /* Будто Ок */
+  border-top: .07rem solid #e5e5e5;
 }
 footer p:last-child {
-  margin-bottom: 2;        /* хз зачем */
+  margin-bottom: 2;
 }
 .scale {
-    transition: 1s; /* Время эффекта */
+    transition: 1s;
    }
    .scale:hover {
-    transform: scale(1.07); /* Увеличиваем масштаб */
+    transform: scale(1.07);
    }
 
 .image {
