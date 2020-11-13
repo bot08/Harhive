@@ -4,7 +4,7 @@
     <!-- SEO и мета теги -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Новый сайт Harhive - невероятно большой архив аниме артов!">
+    <meta name="description" content="О Harhive, его история и жизненые сложности">
     <meta name="author" content="Harhive">
     <title>Harhive - О сайте</title>
     <?php $thisPage="about"; ?>
@@ -13,7 +13,7 @@
     <!-- Bootstrap  CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer/">
-    <link href="template.css" rel="stylesheet">
+    <link href="template.css?2" rel="stylesheet">
   </head>
   <!--Верх-->
   <body>
@@ -33,7 +33,7 @@
   <h1 class="display-4"><b>Помощь проекту</b></h1>
   <p>Если есть желающие помочь с развитием сайта, пожалуйста пишите на почту:<b> info.harhive@gmail.com </b><br>Также обязательно нужно уметь работать с html, CSS, JavaScript.</p>
   <p>Отдельное спасибо Роме </p>
-  <p><br>Version 0.8.1 <br><a href="https://github.com/bot08/Harhive">Github</a></p>
+  <p><br>Version 0.9pre <br><a href="https://github.com/bot08/Harhive">Github</a></p>
 </main>
 <main><center><a href="https://admin.harhive.pp.ua/copy" type="button" class="btn btn-light  shadow p-3 mb-5 button">Copyright</a><a href="https://admin.harhive.pp.ua/legal-note" type="button" class="btn btn-light  shadow p-3 mb-5 button">Legal note</a><a href="https://admin.harhive.pp.ua/dmca" type="button" class="btn btn-light  shadow p-3 mb-5 button">DMCA</a></center></main>
 

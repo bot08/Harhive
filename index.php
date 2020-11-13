@@ -4,7 +4,7 @@
   <!-- SEO и мета теги -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Новый сайт Harhive - невероятно большой архив аниме артов!">
+    <meta name="description" content="Новый сайт Harhive - невероятно большой архив аниме артов! Более 50000000 картинок!">
     <meta name="author" content="Harhive">
     <title>Harhive</title>
     <?php $thisPage="index"; ?>

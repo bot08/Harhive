@@ -4,7 +4,7 @@
     <!-- SEO и мета теги -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Новый сайт Harhive - невероятно большой архив аниме артов!">
+    <meta name="description" content="Harhive - FAQ (Ответы на вопросы)">
     <meta name="author" content="Harhive">
     <title>Harhive - ответы на вопросы</title>
     <?php $thisPage="faq"; ?>
@@ -13,7 +13,7 @@
     <!-- Bootstrap + CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer/">
-    <link href="template.css" rel="stylesheet">
+    <link href="template.css?2" rel="stylesheet">
   </head>
       <!--Верх-->
   <body>

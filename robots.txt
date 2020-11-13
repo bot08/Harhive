@@ -1,5 +1,7 @@
-User-Agent: *
-Disallow: /
+User-agent: Googlebot
 Disallow: /admin
+
+User-agent: *
+Allow: /
 
 Sitemap: https://harhive.pp.ua/sitemap.xml
