@@ -1,0 +1,10 @@
+.lightboxOverlay{
+    background: no-repeat rgba(0, 0, 0, 0.720)!important;
+  }
+
+.navbar{
+    background: rgba(240, 240, 240, 0.942) !important;
+    z-index: 2;
+    backdrop-filter: blur(10px) saturate(125%); 
+    -webkit-backdrop-filter: blur(10px) saturate(125%);
+  }

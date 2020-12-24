@@ -3,15 +3,15 @@
   /* 
   Куки
   */
+
+  $cookie_was = "yes";
+  setcookie($cookie_was, time() + (2580000), "/"); // на 1 день (86400 * 30)
+
   
-  $cookie_wall = "wall";
-  setcookie($cookie_wall, time() + (2580000), "/"); // на 1 день (86400 * 30)
-
-
 /* Указываем страницу */
-$navpage="wallpaper";  /* Для выделения навигации, также нужно указать в файле config.php */
-$pagetitle="обои";   /* Текст в название страницы */
-$description="Новый сайт Harhive! Более 100000 аниме обоев и не только!";
+$navpage="home";  /* Для выделения навигации, также нужно указать в файле config.php */
+$pagetitle="арты";   /* Текст в название страницы */
+$description="Новый сайт Harhive! Более 100000 аниме артов и не только!";
 
 /* Импортируем конфиг */
 include("dist/config.php");
@@ -21,7 +21,7 @@ echo '<body class="d-flex flex-column h-100">
   <main class="container">';
 
 
-include("pages/wallpaper.php");   /* Тут указываем нужный файл страницы */
+include("pages/art.php");   /* Тут указываем нужный файл страницы */
 
 // Конец контейнера
 echo '  </main>';
