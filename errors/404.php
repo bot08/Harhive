@@ -8,7 +8,11 @@ $pagetitle="404";   /* Текст в название страницы */
 include("../dist/config.php");
 
 ?>
-
+<head>
+    <link href="https://harhive.pp.ua/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://harhive.pp.ua/dist/css/lightbox.min.css">
+    <link href="https://harhive.pp.ua/dist/css/template.css" rel="stylesheet">
+</head>
 <style>
   
 body {
@@ -17,8 +21,6 @@ body {
   }
 </style>
 
-<body class="d-flex flex-column h-100">
-<main class="container">
  <center>
    <h1 class="display-4"><b>Страница не найдена</b></h1>
    <h4>404</h4>
@@ -27,7 +29,7 @@ body {
     <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
    </svg> На главную</a>
   </center>
-</main>
+
   
  <!--Футер-->
  <?php 
@@ -35,10 +37,5 @@ body {
   if ($darkmode=="true"){ if ($navpage=="404"||$navpage=="403"||$navpage=="500"){echo "";} else{include("elements/fone.php");}}
   if ($footer=="true"){ echo $footercontent; }
  
- 
-  //Закрываем страницу
- echo' 
- </body>
- </html>'
  
  ?>

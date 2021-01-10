@@ -8,7 +8,11 @@ $pagetitle="403";   /* Текст в название страницы */
 include("../dist/config.php");
 
 ?>
-
+<head>
+    <link href="https://harhive.pp.ua/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://harhive.pp.ua/dist/css/lightbox.min.css">
+    <link href="https://harhive.pp.ua/dist/css/template.css" rel="stylesheet">
+</head>
 <style>
   
 body {

@@ -29,7 +29,7 @@ if(strlen($commentf)<="3" || strlen($namef)>"777"){ die('<script>alert( "Ком�
 
   $myfile = fopen("elements/data.html", "a") or die("Что-то пошло не так :(");
 	$writeInFile = "<h4><i>  Ник: &nbsp;".$namef."</i></h4>";
-  $writeInFile2 = "<i>  Коментарий: &nbsp;</i>".$commentf."<hr>";
+  $writeInFile2 = "<i>  Комментарий: &nbsp;</i>".$commentf."<hr>";
   $old = file_get_contents('elements/data.html');
   file_put_contents('elements/data.html', '');
 	fwrite($myfile, $writeInFile);

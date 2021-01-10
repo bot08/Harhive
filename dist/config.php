@@ -48,11 +48,15 @@ $keywords="harhive, хархив, anime, аниме, арты, эротика, �
 $authortag="true";  /* "true" - метатег Автор включён */
 $author="harhive";  /* Содержание метатега Автор */
 
+$autoload="true";  /* Авто подгрузка картинок */
+
 $siteoff="false";  /* "true" - сайт в режиме обслуживания (errors/maintenance.php) */
 
 $minify="false";   /* "true" - сжимает html код сайта до 1 строки, удаляя пробелы и абзацы */
 
-$ddos="false";    /* "true" - ограничивает количество запросов пользователя, максимум 3 обращения за 1.5 секунды (всей нагрузки не снимает) */
+$ddos="true";    /* "true" - ограничивает количество запросов пользователя, максимум 3 обращения за 1.5 секунды (всей нагрузки не снимает) */
+
+$add="true";   //рекалама
  
   /* 
   Визуальные настройки шаблона
@@ -65,10 +69,10 @@ $navico="true";  /* "true" - иконки навигации включены */
 $brand="true";   /* "true" - включает бренд */
 
 $darkmode="false";  /* "true" - включает тёмную тему */
-$autodarkmode="true";   /* "true" - включает тёмную тему автоматически (для работы нужно отключить darkmode) */
-$userdarkmode="false";   /* "true" - пользователь сам выбирает тему сайта */
+$autodarkmode="false";   /* "true" - включает тёмную тему автоматически (для работы нужно отключить darkmode) */
+$userdarkmode="true";   /* "true" - пользователь сам выбирает тему сайта */
 
-$xmas="true";     // На новый год
+$xmas="false";     // На новый год
 
 $footer="true";   /* "true" - футер присутствует */
 
@@ -112,7 +116,7 @@ $navitem4="true";     /* Существует ли элемент */
 
 $navlink4="/faq";     /* Ссылка на страницу (без .php) */
 
-$navname4="Ответы на вопросы";    /* Название на панели навигации (видимое) */
+$navname4="Частые вопросы";    /* Название на панели навигации (видимое) */
 
 $navpage4="faq";    /* Указываем что за страница (То что вы указываете в $thisPage в каждом файле страницы) */
 
@@ -129,7 +133,7 @@ $navpage7="about";    /* Указываем что за страница (То �
 
 
 /* 6 */
-$navitem9="true";     /* Существует ли элемент */
+$navitem9="false";     /* Существует ли элемент */
 
 $navlink9="/help";     /* Ссылка на страницу (без .php) */
 
@@ -140,7 +144,7 @@ $navpage9="help";    /* Указываем что за страница (То ч
 /* 7 */
 $navitem8="true";     /* Существует ли элемент */
 
-$navlink8="https://www.harhive.pp.ua/";     /* Ссылка на страницу (без .php) */
+$navlink8="https://old.harhive.pp.ua/";     /* Ссылка на страницу (без .php) */
 
 $navname8="Старый сайт";    /* Название на панели навигации (видимое) */
 
@@ -153,13 +157,16 @@ $navpage8="old";    /* Указываем что за страница (То ч�
   */
 
 $footercontent='
+</main>
 <footer class="footer mt-auto py-3">
 <div class="container">
 
-    <p>&copy; Harhive 2020</p>
+    <p>&copy; Harhive 2020-2021</p>
 
 </div>
-</footer>';   /* Содержание */
+</footer>
+</body>
+</html>';   /* Содержание */
 
 
 
@@ -192,7 +199,7 @@ if ($ddos=="true"){
     $time=microtime(1);
     if (!isset($_SESSION["arr_time"])) $_SESSION["arr_time"]=array(0,0,0);
     $min_time=min($_SESSION["arr_time"]);
-    if ($time-$min_time < 1.5) die("<center><img src=\"https://www.pngjoy.com/pngl/383/7083822_girl-crying-sad-anime-girl-transparent-transparent-png.png\"><h2>Вы слишком часто обращаетесь к страничкам сайта!</h2></center>");
+    if ($time-$min_time < 1.2) die("<meta charset=\"utf-8\"><center><img src=\"https://www.pngjoy.com/pngl/383/7083822_girl-crying-sad-anime-girl-transparent-transparent-png.png\"><h2>Вы слишком часто обращаетесь к страничкам сайта!</h2></center>");
     $min_index=array_search($min_time,$_SESSION["arr_time"]);    
     $_SESSION["arr_time"][$min_index]=$time;
 }
@@ -242,6 +249,8 @@ if ($siteoff=="true"){ if ($navpage=="404"||$navpage=="403"||$navpage=="500"){ i
     <script src="dist/js/jquery-3.5.1.min.js"></script>
     <script src="dist/js/bootstrap.bundle.min.js"></script>
     <script src="dist/js/lightbox-plus-jquery.min.js"></script>
+    <?php if ($add=="true")  echo '<script data-ad-client="ca-pub-8946219937000871" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';?>
+    
  </head>
 
 <?php if ($siteoff=="true"){include("errors/maintenance.php");exit;}?>
@@ -251,9 +260,9 @@ if ($siteoff=="true"){ if ($navpage=="404"||$navpage=="403"||$navpage=="500"){ i
 <nav class="navbar navbar-inverse navbar-expand-md navbar-light fixed-top shadow-sm p-2 mb-2 <?php if ($mininav=="true") echo "container"; ?> <?php if ($darkmode=="true") echo "navbar-dark"?>">
     <a class="navbar-brand mb-0 h1" href="#">
     <?php if($darkmode=="true"){
-      if($brand=="true") echo "<img src=\"dist/images/whitelogo.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" loading=\"lazy\">";
+      if($brand=="true") echo "<img src=\"dist/images/whitelogo.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" loading=\"lazy\" alt=\"logo\">";
     }
-      else{  if($brand=="true") echo "<img src=\"dist/images/favicon.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" loading=\"lazy\">";} ?> <?php echo "$sitename" ?>
+      else{  if($brand=="true") echo "<img src=\"dist/images/favicon.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" loading=\"lazy\" alt=\"logo\">";} ?> <?php echo "$sitename" ?>
     </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -338,9 +347,12 @@ if ($siteoff=="true"){ if ($navpage=="404"||$navpage=="403"||$navpage=="500"){ i
       }
 
 
-echo "    </ul>
+echo '    </ul>
   </div>
 </nav>
-</body>";
+</body>
+
+<body class="d-flex flex-column h-100">
+<main class="container">';
 if($xmas=="true"){ include("elements/xmas-snow.php");}
 ?>
