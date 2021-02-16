@@ -8,3 +8,8 @@
     backdrop-filter: blur(10px) saturate(125%); 
     -webkit-backdrop-filter: blur(10px) saturate(125%);
   }
+  
+ #snackbar {
+  background-color: rgba(242, 242, 242, 1.0)!important;
+  color: dark!important;
+}

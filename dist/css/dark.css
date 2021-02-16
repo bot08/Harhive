@@ -27,7 +27,7 @@ footer {
 
 
 .navbar{
-  background: rgba(1, 1, 1, 0.42) !important;  
+  background: rgba(1, 1, 1, 0.45) !important;  
 }
 
 
@@ -45,4 +45,11 @@ footer {
 hr{
   color: gray;
   background-color: gray;
+}
+
+
+
+#snackbar {
+  background-color: rgba(42, 42, 42, 0.800);
+  color: aliceblue;
 }

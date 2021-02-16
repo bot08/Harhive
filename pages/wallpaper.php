@@ -1,14 +1,14 @@
 <!-- Main для картинок -->
 <body class="d-flex flex-column h-100">
 <main class="container"> 
-  <script src = 'dist/js/urls.json' type="text/javascript"></script> 
+  <script src = 'dist/js/urls2.json' type="text/javascript"></script> 
 
   <!--Запись базы -->
   <script type="text/javascript">
    var my_data = JSON.parse(data);
   </script>
     
-    <!--Кастом настройка вылеза лигтбокс-->
+    <!--Lightbox-->
     <script>
       lightbox.option({
         'resizeDuration': 320,
@@ -19,9 +19,9 @@
 
   <!--Сюда картинки и уведомления-->
   <?php
-  if(!isset($_COOKIE[$cookie_wall])) { 
+  if(!isset($_COOKIE["wall"])) { 
   include("elements/pop2.php"); } 
-  else { echo "<div><p> <br> </p></div>"; }
+  echo "<div><p> <br> </p></div>";
 ?>
 
 

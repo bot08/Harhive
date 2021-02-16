@@ -2,7 +2,6 @@
 header("Cache-Control: no-cache, must-revalidate"); 
 header("Pragma: no-cache"); 
 
-
  //Определение браузера
  function getInfoBrowser(){
   $agent = $_SERVER['HTTP_USER_AGENT'];
@@ -41,7 +40,7 @@ if ($browserInfo['name']=="Chromium"){
   Главные настройки 
   */
 
-$sitename="Harhive";  /* Название сайта - нужно для генерации head и названии на панели навигации (можно убрать или заменить в файле navbar.php) */
+$sitename="Harhive";  /* Название сайта - нужно для генерации head и названии на панели навигации */
 
 $keywords="harhive, хархив, anime, аниме, арты, эротика, смотреть";   /* Ключевые слова для поисковика (можно несколько) */
 
@@ -52,11 +51,9 @@ $autoload="true";  /* Авто подгрузка картинок */
 
 $siteoff="false";  /* "true" - сайт в режиме обслуживания (errors/maintenance.php) */
 
-$minify="false";   /* "true" - сжимает html код сайта до 1 строки, удаляя пробелы и абзацы */
-
 $ddos="true";    /* "true" - ограничивает количество запросов пользователя, максимум 3 обращения за 1.5 секунды (всей нагрузки не снимает) */
 
-$add="true";   //рекалама
+$ad="false";   //рекалама
  
   /* 
   Визуальные настройки шаблона
@@ -96,7 +93,7 @@ $navitem2="true";     /* Существует ли элемент */
 
 $navlink2="/wallpaper";     /* Ссылка на страницу (без .php) */
 
-$navname2="Обои";    /* Название на панели навигации (видимое) */
+$navname2="Картинки";    /* Название на панели навигации (видимое) */
 
 $navpage2="wallpaper";    /* Указываем что за страница (То что вы указываете в $thisPage в каждом файле страницы) */
 
@@ -174,26 +171,6 @@ $footercontent='
   Другое (Постояные скрипты)
   */
 
-if ($minify=="true"){ 
-    function sanitize_output($buffer) {
-        $search = array(
-            '/\>[^\S ]+/s',
-            '/[^\S ]+\</s',
-            '/(\s)+/s',
-            '/<!--(.|\s)*?-->/'
-        );
-        $replace = array(
-            '>',
-            '<',
-            '\\1',
-            ''
-        );
-        $buffer = preg_replace($search, $replace, $buffer);
-        return $buffer;
-    }
-    ob_start("sanitize_output");
- }
-
 if ($ddos=="true"){
     session_start();
     $time=microtime(1);
@@ -218,21 +195,20 @@ if ($siteoff=="true"){ if ($navpage=="404"||$navpage=="403"||$navpage=="500"){ i
   Ниже уже заглавление страниц...
   */
 ?>
-
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
   <!-- SEO & meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Cache-Control" content="private">
 
     <!-- Name tags -->
-    <title><?php echo "$sitename" ?> - <?php echo "$pagetitle" ?></title>
-    <meta name="description" content="<?php echo "$description" ?>">
-    <meta name="keywords" content="<?php echo "$keywords" ?>" >
-    <meta name="author" content="<?php if ($authortag=="true") echo "$author"; ?>">
+    <title><?php echo $sitename; ?> - <?php echo $pagetitle; ?></title>
+    <meta name="description" content="<?php echo $description; ?>">
+    <meta name="keywords" content="<?php echo $keywords; ?>" >
+    <meta name="author" content="<?php if ($authortag=="true") echo $author;?>">
     <?php if($darkmode=="true"){ echo '<meta name="theme-color" content="#111111">';} ?>
 
     <!-- Favicon -->
@@ -246,10 +222,10 @@ if ($siteoff=="true"){ if ($navpage=="404"||$navpage=="403"||$navpage=="500"){ i
     <?php if ($oldbrowser=="true"){ if($darkmode=="true"){echo "<link href=\"/dist/css/oldbrowser-dark.css\" rel=\"stylesheet\">";} else {echo "<link href=\"/dist/css/oldbrowser.css\" rel=\"stylesheet\">";}} ?>
 
     <!-- JS -->
-    <script src="dist/js/jquery-3.5.1.min.js"></script>
+    <script src="dist/js/jquery-3.5.1.slim.min.js"></script>
     <script src="dist/js/bootstrap.bundle.min.js"></script>
     <script src="dist/js/lightbox-plus-jquery.min.js"></script>
-    <?php if ($add=="true")  echo '<script data-ad-client="ca-pub-8946219937000871" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';?>
+    <?php if ($ad=="true")  echo '<script data-ad-client="ca-pub-8946219937000871" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';?>
     
  </head>
 

@@ -24,8 +24,8 @@ $comment = $_POST['comment'];
 //фильтер
 $namef = filter_var($name, FILTER_SANITIZE_STRING);
 $commentf = filter_var($comment, FILTER_SANITIZE_STRING);
-if(strlen($namef)<="2" || strlen($namef)>"21" ){ die('<script>alert( "Имя должно состоять хотя бы из 3 букв" ); window.location.href = "/book";</script>');}
-if(strlen($commentf)<="3" || strlen($namef)>"777"){ die('<script>alert( "Комментарий должен состоять хотя бы из 4 букв" ); window.location.href = "/book";</script>');}
+if(strlen($namef)<="2" || strlen($namef)>"21" ){ die('<script>window.location.href = "/book?1";</script>');}
+if(strlen($commentf)<="3" || strlen($namef)>"777"){ die('<script>window.location.href = "/book?2";</script>');}
 
   $myfile = fopen("elements/data.html", "a") or die("Что-то пошло не так :(");
 	$writeInFile = "<h4><i>  Ник: &nbsp;".$namef."</i></h4>";
@@ -59,4 +59,37 @@ require "elements/data.html";
   </div>
    </p>
   <p> </p>
+  
+  
+<?php
+
+// Тело уведомления 1 и 2
+if("1"==$_SERVER['QUERY_STRING']){
+  echo '<div id="snackbar" class="shadow">Неверное имя</div>
+  <script>
+  $(document).ready(function(){
+    var x = document.getElementById("snackbar");
+    x.className = "show shadow";
+    setTimeout(function(){ x.className = x.className.replace("show shadow", ""); }, 2970);
+  });
+  </script>';
+}
+
+
+if("2"==$_SERVER['QUERY_STRING']){
+  echo '<div id="snackbar">Слишком маленький комментарий</div>
+  <script>
+  $(document).ready(function(){
+    var x = document.getElementById("snackbar");
+    x.className = "show shadow";
+    setTimeout(function(){ x.className = x.className.replace("show shadow", ""); }, 2970);
+  });
+  </script>';
+}
+
+
+?>
+  
+  
+  
  </main>
