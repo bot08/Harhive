@@ -25,10 +25,10 @@ footer p:last-child {
 }
 
 .scale {
-  transition: 1s;
+  transition: 0.48s;
  }
  .scale:hover {
-  transform: scale(1.07);
+  transform: scale(1.05);
  }
 .image {
 margin-top:21px;
@@ -47,21 +47,24 @@ border-radius: 17px;
   margin-left: 21px;
 }
 
-@media(min-width: 768px) and (max-width: 1000px){
+@media(min-width: 768px) and (max-width: 992px){
   .nav-item{
    margin-left: 42px;
 }}
 
-@media(min-width: 1000px) and (max-width: 1200px){
+@media(min-width: 992px) and (max-width: 1200px){
   .nav-item{
    margin-left: 72px;
 }}
 
 .navbar{
-  background: rgba(247, 247, 247, 0.62) !important;
+  background: rgba(247, 247, 247, 0.72) !important;
   z-index: 2;
   backdrop-filter: blur(10px) saturate(125%); 
   -webkit-backdrop-filter: blur(10px) saturate(125%);
+  -moz-backdrop-filter: blur(10px) saturate(125%);
+  -o-backdrop-filter: blur(10px) saturate(125%);
+  -ms-backdrop-filter: blur(10px) saturate(125%);
 }
 @media (min-width: 575px){
   .navbar{
@@ -88,6 +91,9 @@ border-radius: 17px;
   background: no-repeat url("");
   backdrop-filter: blur(1.8px) saturate(210%) brightness(42%); 
   -webkit-backdrop-filter: blur(1.8px) saturate(210%) brightness(42%);
+  -moz-backdrop-filter: blur(1.8px) saturate(210%) brightness(42%);
+  -o-backdrop-filter: blur(1.8px) saturate(210%) brightness(42%);
+  -ms-backdrop-filter: blur(1.8px) saturate(210%) brightness(42%);
 }
 
 .little{
@@ -171,11 +177,6 @@ navico{
 }
 }
 
-.error{
-  position: fixed;
-  position: absolute;
-}
-
 
 
 #snackbar {
@@ -197,6 +198,9 @@ navico{
   border-radius: 12px;
   backdrop-filter: blur(5px) saturate(210%) brightness(120%); 
   -webkit-backdrop-filter: blur(5px) saturate(210%) brightness(120%);
+  -moz-backdrop-filter: blur(5px) saturate(210%) brightness(120%);
+  -o-backdrop-filter: blur(5px) saturate(210%) brightness(120%);
+  -ms-backdrop-filter: blur(5px) saturate(210%) brightness(120%);
 }
 
 #snackbar.show {
@@ -239,3 +243,8 @@ navico{
       max-width: 60%;
     }
   }
+
+
+svg{
+  vertical-align: -2.4px;
+}

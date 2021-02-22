@@ -2,39 +2,6 @@
 header("Cache-Control: no-cache, must-revalidate"); 
 header("Pragma: no-cache"); 
 
- //Определение браузера
- function getInfoBrowser(){
-  $agent = $_SERVER['HTTP_USER_AGENT'];
-  preg_match("/(MSIE|Opera|Firefox|Chrome|Version)(?:\/| )([0-9.]+)/", $agent, $bInfo);
-  $browserInfo = array();
-  $browserInfo['name'] = ($bInfo[1]=="Version") ? "Safari" : $bInfo[1];
-  $browserInfo['version'] = $bInfo[2];     
-  return $browserInfo;
- }
-$oldbrowser="true";
-$browserInfo = getInfoBrowser();
-
-
-if ($browserInfo['name']=="Chrome"){
-  if ($browserInfo['version']>="81"){
-    $oldbrowser="false";
-  }
-}
-if ($browserInfo['name']=="Opera"){
-  if ($browserInfo['version']>="72"){
-    $oldbrowser="false";
-  }
-}
-if ($browserInfo['name']=="Safari"){
-  if ($browserInfo['version']>="12"){
-    $oldbrowser="false";
-  }
-}
-if ($browserInfo['name']=="Chromium"){
-  if ($browserInfo['version']>="81"){
-    $oldbrowser="false";
-  }
-}
 
   /* 
   Главные настройки 
@@ -72,6 +39,8 @@ $userdarkmode="true";   /* "true" - пользователь сам выбира
 $xmas="false";     // На новый год
 
 $footer="true";   /* "true" - футер присутствует */
+
+$ver="?107";
 
 
   /* 
@@ -191,6 +160,42 @@ if($userdarkmode=="true"){
 
 
 if ($siteoff=="true"){ if ($navpage=="404"||$navpage=="403"||$navpage=="500"){ include("maintenance.php");exit;}}
+
+
+ //Определение браузера
+ function getInfoBrowser(){
+  $agent = $_SERVER['HTTP_USER_AGENT'];
+  preg_match("/(MSIE|Opera|Firefox|Chrome|Version)(?:\/| )([0-9.]+)/", $agent, $bInfo);
+  $browserInfo = array();
+  $browserInfo['name'] = ($bInfo[1]=="Version") ? "Safari" : $bInfo[1];
+  $browserInfo['version'] = $bInfo[2];     
+  return $browserInfo;
+ }
+$oldbrowser="true";
+$browserInfo = getInfoBrowser();
+
+
+if ($browserInfo['name']=="Chrome"){
+  if ($browserInfo['version']>="81"){
+    $oldbrowser="false";
+  }
+}
+if ($browserInfo['name']=="Opera"){
+  if ($browserInfo['version']>="72"){
+    $oldbrowser="false";
+  }
+}
+if ($browserInfo['name']=="Safari"){
+  if ($browserInfo['version']>="12"){
+    $oldbrowser="false";
+  }
+}
+if ($browserInfo['name']=="Chromium"){
+  if ($browserInfo['version']>="81"){
+    $oldbrowser="false";
+  }
+}
+
   /* 
   Ниже уже заглавление страниц...
   */
@@ -200,7 +205,7 @@ if ($siteoff=="true"){ if ($navpage=="404"||$navpage=="403"||$navpage=="500"){ i
   <head>
   <!-- SEO & meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Cache-Control" content="private">
 
@@ -217,11 +222,11 @@ if ($siteoff=="true"){ if ($navpage=="404"||$navpage=="403"||$navpage=="500"){ i
     <!-- CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/lightbox.min.css">
-    <link href="dist/css/template.css" rel="stylesheet">
+    <link href="dist/css/template.css<?php echo $ver;?>" rel="stylesheet">
     <?php if ($darkmode=="true")  echo "<link href=\"/dist/css/dark.css\" rel=\"stylesheet\">";?>
     <?php if ($oldbrowser=="true"){ if($darkmode=="true"){echo "<link href=\"/dist/css/oldbrowser-dark.css\" rel=\"stylesheet\">";} else {echo "<link href=\"/dist/css/oldbrowser.css\" rel=\"stylesheet\">";}} ?>
 
-    <!-- JS -->
+    <!-- MainJS -->
     <script src="dist/js/jquery-3.5.1.slim.min.js"></script>
     <script src="dist/js/bootstrap.bundle.min.js"></script>
     <script src="dist/js/lightbox-plus-jquery.min.js"></script>
