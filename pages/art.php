@@ -79,5 +79,3 @@ else{
         'fadeDuration':320,
       })
     </script>
-
-

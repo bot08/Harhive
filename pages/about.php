@@ -27,7 +27,7 @@
 </main>
 
 <main class="container">
-  <p><code>Version 1.07</code></p>
+  <p><code>Version 1.08</code></p>
   <center>
   <a href="/help" type="button" class="btn shadow p-2 mb-4 button <?php if ($darkmode=="true"){echo "btn-danger";} else{echo "btn-light";} ?>"><like class="<?php if ($darkmode!="true"){echo "text-danger";};?>"><?php echo '<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/> </svg>';?></like> Благодарности и помощь</a>
   </center>

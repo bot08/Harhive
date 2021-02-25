@@ -9,7 +9,7 @@ $(document).ready(function(){
                 for(i=0;i<15;i++){
                 var url_img = Math.floor(Math.random() * 7059);
                 $("#out").append('<a href="https://ymfkaboyrybjzj2xkeinla-on.drv.tw/light/'+url_img+'.jpg" data-lightbox="img"><img class="img-fluid shadow image scale size" src="/dist/prevLight/'+url_img+'.jpg" loading="lazy" alt="content"></a>');}
-                now = false;
+                setTimeout(() => {now = false; }, 480);
             }
         });
 });

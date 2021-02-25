@@ -40,8 +40,6 @@ $xmas="false";     // На новый год
 
 $footer="true";   /* "true" - футер присутствует */
 
-$ver="?107";
-
 
   /* 
   Настройка навигации
@@ -116,6 +114,7 @@ $navname8="Старый сайт";    /* Название на панели на
 
 $navpage8="old";    /* Указываем что за страница (То что вы указываете в $thisPage в каждом файле страницы) */
 
+$ver="?108";
 
 
   /* 
@@ -195,6 +194,12 @@ if ($browserInfo['name']=="Chromium"){
     $oldbrowser="false";
   }
 }
+/* 
+if ($browserInfo['name']=="Firefox"){
+  if ($browserInfo['version']>="82"){
+    $oldbrowser="false";
+  }
+}*/
 
   /* 
   Ниже уже заглавление страниц...
@@ -225,13 +230,13 @@ if ($browserInfo['name']=="Chromium"){
     <link href="dist/css/template.css<?php echo $ver;?>" rel="stylesheet">
     <?php if ($darkmode=="true")  echo "<link href=\"/dist/css/dark.css\" rel=\"stylesheet\">";?>
     <?php if ($oldbrowser=="true"){ if($darkmode=="true"){echo "<link href=\"/dist/css/oldbrowser-dark.css\" rel=\"stylesheet\">";} else {echo "<link href=\"/dist/css/oldbrowser.css\" rel=\"stylesheet\">";}} ?>
-
+    
     <!-- MainJS -->
     <script src="dist/js/jquery-3.5.1.slim.min.js"></script>
     <script src="dist/js/bootstrap.bundle.min.js"></script>
     <script src="dist/js/lightbox-plus-jquery.min.js"></script>
     <?php if ($ad=="true")  echo '<script data-ad-client="ca-pub-8946219937000871" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';?>
-    
+
  </head>
 
 <?php if ($siteoff=="true"){include("errors/maintenance.php");exit;}?>
@@ -334,6 +339,7 @@ echo '    </ul>
 </body>
 
 <body class="d-flex flex-column h-100">
-<main class="container">';
+<main class="container">
+';
 if($xmas=="true"){ include("elements/xmas-snow.php");}
 ?>
