@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var now = false;
+    var now = false; 
         var jqBar = $('#watch');
         var jqBarStatus = true;
         $(window).scroll(function() { 
