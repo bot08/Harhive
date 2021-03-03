@@ -232,9 +232,9 @@ if ($browserInfo['name']=="Firefox"){
     <?php if ($oldbrowser=="true"){ if($darkmode=="true"){echo "<link href=\"/dist/css/oldbrowser-dark.css\" rel=\"stylesheet\">";} else {echo "<link href=\"/dist/css/oldbrowser.css\" rel=\"stylesheet\">";}} ?>
     
     <!-- MainJS -->
-    <script src="dist/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="dist/js/jquery-3.6.0.min.js"></script>
     <script src="dist/js/bootstrap.bundle.min.js"></script>
-    <script src="dist/js/lightbox-plus-jquery.min.js"></script>
+    <script src="dist/js/lightbox.min.js"></script>
     <?php if ($ad=="true")  echo '<script data-ad-client="ca-pub-8946219937000871" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';?>
 
  </head>
