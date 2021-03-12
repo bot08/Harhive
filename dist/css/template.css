@@ -248,3 +248,11 @@ navico{
 svg{
   vertical-align: -2.4px;
 }
+
+.btn{
+  border-radius: .48rem;
+}
+
+.form-control{
+  border-radius: .42rem;
+}
